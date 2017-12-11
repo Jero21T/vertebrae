@@ -102,8 +102,8 @@ var Message = Backbone.Model.extend({
      * Putting it into the initialize function let's us be sure that
      * all models that are created will have event listeners on them.
      */
-    this.on('change:message', function(message){
-      window.renderSomethingOnThePage(message);
+    this.on('change', function(event){
+      renderSomethingOnThePage(event.get('message'));
     });
    
 
